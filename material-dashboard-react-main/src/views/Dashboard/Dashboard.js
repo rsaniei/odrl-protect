@@ -6,6 +6,8 @@ import CustomTabs from "components/CustomTabs/CustomTabs.js";
 import Card from "components/Card/Card.js";
 import CardBody from "components/Card/CardBody.js";
 import img from "../../assets/img/odrlModel.png";
+import Button from '@material-ui/core/Button';
+import { getInfo } from "../../server/api/api-one.js"
 
 const useStyles = makeStyles({
   imageStyle: {
@@ -39,6 +41,7 @@ export default function Dashboard() {
                       Policies are used to represent permitted and prohibited actions over a certain asset, as well as the obligations required to be meet by stakeholders. In addition, policies may be limited by constraints (e.g., temporal or spatial constraints) and duties (e.g. payments) may be imposed on permissions.
                     </CardBody>
                     }
+                    <Button onClick={getInfo} variant="contained">Default</Button>
                   </Card>
                 ),
 
