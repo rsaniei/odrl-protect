@@ -1,0 +1,34 @@
+{
+  "@context": "http://www.w3.org/ns/odrl.jsonld",
+  "@type": "Set",
+  "uid": "http://example.com/policy:02",
+  "permission": [
+    {
+      "target": "http://example.com/asset:2020.senosr",
+      "action": "use",
+      "constraint": [
+        {
+          "leftOperand": "timeInterval",
+          "operator": "eq",
+          "rightOperand": "P12H"
+        },
+        {
+          "leftOperand": "time",
+          "operator": "gteq",
+          "rightOperand": {
+            "@value": "08:00:00Z",
+            "@type": "xsd:time"
+          }
+        },
+        {
+          "leftOperand": "spatialCoordinates",
+          "operator": "eq",
+          // A named and identified geospatial area with defined borders which is used for exercising the action of the Rule.
+          // An IRI MUST be used to represent this value.
+          "rightOperand": "https://www.wikidata.org/wiki/Q183",
+          "comment": "within the farm"
+        }
+      ]
+    }
+  ]
+}
